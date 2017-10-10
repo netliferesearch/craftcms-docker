@@ -1,7 +1,9 @@
 version: '2'
 services:
     web:
-      image: wyveo/craftcms-docker:craft3beta
+      build:
+        context: .
+        dockerfile: Dockerfile
       ports:
         - 80:80
       volumes:
