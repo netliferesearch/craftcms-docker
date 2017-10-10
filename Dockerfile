@@ -1,6 +1,6 @@
 FROM wyveo/nginx-php-fpm:latest
 
-MAINTAINER Colin Wilson "colin@wyveo.com"
+LABEL author="knut.melvaer@netlife.com"
 
 # Composer - https://hub.docker.com/r/composer/composer/
 ENV COMPOSER_VERSION 1.5.1
