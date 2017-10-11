@@ -11,7 +11,6 @@ else
     cp /.env $DIR
     cp /config/general.php $DIR/config/general.php
     cp /config/memcache.php $DIR/config/memcache.php
-    composer require heroku/heroku-buildpack-php --dev
 fi
 
 # Start nginx
