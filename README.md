@@ -8,6 +8,10 @@ Install Docker for Mac
 ## Get started
 `docker-compose up`
 
+## Deployment
+
+Just push the thing to Heroku, and set some .env-stuff
+
 When you see the Craft welcome screen in Terminal, head over to [0.0.0.0/admin/install](http://0.0.0.0/admin/install) and install Craft.
 
 ## Magic Voodo if it does work
