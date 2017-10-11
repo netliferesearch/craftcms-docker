@@ -9,5 +9,6 @@
       },
       "require-dev": {
         "heroku/heroku-buildpack-php": "^125.0"
-    }
+    },
+    "scripts" : { "post-install-cmd" : "cd app;composer install;composer update" }
 }
