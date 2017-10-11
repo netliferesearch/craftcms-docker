@@ -1,0 +1,29 @@
+{
+  "name": "netlife-craft-3-starter",
+  "version": "0.0.2",
+  "description": "Docker-based Craft 3 starter for Netlife",
+  "main": "webpack.config.js",
+  "scripts": {
+    "dev": "npm run webpack",
+    "webpack": "webpack -w",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/netliferesearch/craftcms-docker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/netliferesearch/craftcms-docker/issues"
+  },
+  "homepage": "https://github.com/netliferesearch/craftcms-docker#readme",
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "browser-sync": "^2.18.13",
+    "browser-sync-webpack-plugin": "^1.2.0",
+    "extract-text-webpack-plugin": "^3.0.1",
+    "path": "^0.12.7",
+    "webpack": "^3.6.0"
+  }
+}
