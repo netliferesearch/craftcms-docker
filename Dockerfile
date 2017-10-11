@@ -23,15 +23,16 @@ sed -i -e "s/;session.save_path\s*=\s*.*/session.save_path = \${MEMCACHED_HOST}:
 # Add default craft cms nginx config
 ADD ./default.conf /etc/nginx/conf.d/default.conf
 
+RUN chown -Rf nginx:nginx /usr/share/nginx
+
 # Add database environment
 ADD .env.sample /.env
 ADD ./install.sh /install.sh
 RUN chmod +x /install.sh
 
-# Add default config
-ADD ./config /usr/share/nginx/config
 
-RUN chown -Rf nginx:nginx /usr/share/nginx/app
+# Add default config
+ADD ./config /config
 
 EXPOSE 80
 
