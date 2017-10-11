@@ -4,7 +4,7 @@
         "ext-mbstring": "*",
         "ext-imagick": "*",
         "ext-mcrypt": "*",
-        "ext-redis": "*",
+        "ext-memcached": "*",
         "vlucas/phpdotenv": "*"
       },
       "require-dev": {
