@@ -29,7 +29,7 @@ ADD ./install.sh /install.sh
 RUN chmod +x /install.sh
 
 # Add default config
-# ADD ./config /usr/share/nginx/app/config
+ADD ./config /usr/share/nginx/app/config
 
 RUN chown -Rf nginx:nginx /usr/share/nginx/app
 
