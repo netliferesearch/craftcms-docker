@@ -33,3 +33,5 @@ Thumbs.db
 
 # other
 /docker-src/db
+/app/web/css
+/app/web/js
