@@ -12,25 +12,24 @@ Out of the box Craft 3 with Nginx, Postgres and Memcached.
 1. Run `npm install` to install development dependencies.
 1. Run `npm run dev` and then go visit [http://localhost/admin](http://localhost/admin), and get to work.
 
+Where are the files to edit?
+
+- /app has the craft installation.
+- /resources houses both js and css.
+
 ## How to make a copy of remote database
 
-Prerequisite: Install Heroku CLI and ensure that your user has access.
+Prerequisite: Install [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) and ensure that your user has access.
 
 1. Run `heroku git:remote -a vaaler-kommune` in the project folder in order point the code towards Heroku.
 1. Run `./download-prod.sh` in the project folder. The database needs to be running for this script to be able to push data into the database.  
 
 ## Deployment
 
-Just push the thing to Heroku, and set some .env-stuff
-
-When you see the Craft welcome screen in Terminal, head over to [0.0.0.0/admin/install](http://0.0.0.0/admin/install) and install Craft.
+1. First ensure that you have command line access to push to Heroku (see previous section).
+1. Run `git push heroku`
+1. Visit https://vaaler-kommune.herokuapp.com
 
 ## Troubleshooting
 
-**This is a fresh start, will delete any data in existing container**
-
-```
-docker-compose down && \
-docker-compose build --no-cache && \
-docker-compose up --force-recreate
-```
+Delete containers with: Run `docker-compose down && docker-compose up --force-recreate`
