@@ -19,12 +19,20 @@ sed -i -e "s/;session.save_path\s*=\s*.*/session.save_path = \${MEMCACHED_HOST}:
 
 # Add default craft cms nginx config
 ADD ./docker-src/default.conf /etc/nginx/conf.d/default.conf
-
 RUN chown -Rf nginx:nginx /usr/share/nginx
 
-# Add configuration
-ADD ./docker-src/.sample.env /.env
-ADD ./docker-src/seed-config /seed-config
+# Install craft with dependencies into a tmp build folder
+RUN composer create-project craftcms/craft /craft-tmp-build -s beta \
+  && composer install -d /craft-tmp-build \
+  && rm /craft-tmp-build/.env.example
+
+# Add configuration to tmp build folder
+ADD ./docker-src/.sample.env /craft-tmp-build/.env
+ADD ./docker-src/seed-config/sample.db.php /craft-tmp-build/config/db.php
+ADD ./docker-src/seed-config/sample.general.php /craft-tmp-build/config/general.php
+ADD ./docker-src/seed-config/sample.memcache.php /craft-tmp-build/config/memcache.php
+ADD ./docker-src/seed-templates/sample.index.twig /craft-tmp-build/templates/index.twig
+ADD ./docker-src/seed-templates/sample.robots.txt.twig /craft-tmp-build/templates/robots.txt.twig
 ADD ./docker-src/install.sh /install.sh
 RUN chmod +x /install.sh
 
