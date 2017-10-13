@@ -10,7 +10,7 @@ Out of the box Craft 3 with Nginx, Postgres and Memcached.
 
 1. Inside the root project folder run `docker-compose up`. This will start a web server, a database and a memcache database. All magically behind the scenes.
 1. Run `npm install` to install development dependencies.
-1. Run `npm run dev` and then go visit .
+1. Run `npm run dev` and then go visit [http://localhost/admin](http://localhost/admin), and get to work.
 
 ## Deployment
 
