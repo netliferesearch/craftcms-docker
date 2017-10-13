@@ -26,7 +26,7 @@ Where are the files to edit?
 Prerequisite: Install [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) and ensure that your user has access.
 
 1. Run `heroku git:remote -a INSERT-HEROKU-APPNAME` in the project folder in order point the code towards Heroku.
-1. Run `./download-prod.sh` in the project folder. The database needs to be running for this script to be able to push data into the database.  
+1. Run `./download-prod.sh` in the project folder. The database needs to be running for this script to be able to push data into the database.
 
 ## Deployment
 
@@ -38,3 +38,13 @@ Prerequisite: Install [Heroku CLI](https://devcenter.heroku.com/articles/heroku-
 
 1. Delete containers with: `docker-compose down && docker-compose up --force-recreate`
 1. If you want to purge and reinstall craft as well. You can delete the /app folder before running the previous step.
+
+### Something is hogging port 80
+
+```ERROR: for crafttest_web_1  Cannot start service web: driver failed programming external connectivity on endpoint crafttest_web_1 (bf5f12acc37ee944ffd25862ef41f8bc16e9df3b6aef935c7ce8ad720f13dde1): Error starting userland proxy: Bind for 0.0.0.0:80: unexpected error (Failure EADDRINUSE)```
+
+You most probably have either MAMP or a local Apache server running. MAMP can be quit, and you can turn off the local apache running these two commands in terminal:
+
+`sudo launchctl unload /System/Library/LaunchDaemons/org.apache.httpd.plist`
+
+`killall httpd`
