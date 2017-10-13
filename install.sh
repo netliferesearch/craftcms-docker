@@ -11,6 +11,7 @@ else
     cp /.env $DIR
     cp /config/general.php $DIR/config/general.php
     cp /config/memcache.php $DIR/config/memcache.php
+    cp /config/db.php $DIR/config/db.php
 fi
 
 # Start nginx
