@@ -11,14 +11,10 @@ const publicPath = path.resolve(__dirname, 'app/web')
 
 module.exports = {
   entry: {
-    main: [
-      'babel-polyfill',
-      mainJSPath,
-      mainCSSPath
-    ]
+    main: ['babel-polyfill', mainJSPath, mainCSSPath]
   },
   output: {
-    filename: path.join('js','min','[name].js'),
+    filename: path.join('js', 'min', '[name].js'),
     path: publicPath,
     publicPath: publicPath
   },
@@ -28,7 +24,7 @@ module.exports = {
         test: /\.jsx$|\.js$/,
         loader: 'babel-loader',
         query: {
-          presets: ['es2015', 'stage-0']
+          presets: ['env']
         },
         exclude: [nodeModulesPath]
       },
@@ -42,7 +38,7 @@ module.exports = {
       },
       {
         test: /\.svg/,
-        loader: path.resolve('svg-url-loader?name=assets','[name].[ext]')
+        loader: path.resolve('svg-url-loader?name=assets', '[name].[ext]')
       }
     ]
   },
