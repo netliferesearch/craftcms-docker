@@ -17,9 +17,6 @@ sed -i -e "s/memory_limit\s*=\s*.*/memory_limit = 256M/g" ${php_conf} && \
 sed -i -e "s/session.save_handler\s*=\s*.*/session.save_handler = memcached/g" ${php_conf} && \
 sed -i -e "s/;session.save_path\s*=\s*.*/session.save_path = \${MEMCACHED_HOST}:11211/g" ${php_conf}
 
-# Create Craft project
-# RUN composer create-project craftcms/craft /usr/share/nginx/app -s beta
-
 # Add default craft cms nginx config
 ADD ./default.conf /etc/nginx/conf.d/default.conf
 
@@ -29,7 +26,6 @@ RUN chown -Rf nginx:nginx /usr/share/nginx
 ADD .env.sample /.env
 ADD ./install.sh /install.sh
 RUN chmod +x /install.sh
-
 
 # Add default config
 ADD ./config /config
