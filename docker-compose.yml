@@ -30,7 +30,7 @@ services:
     postgres:
       image: postgres:9.6.4
       ports:
-        - 5432:5432
+        - 5433:5432
       environment:
         POSTGRES_USER: craft3beta
         POSTGRES_PASSWORD: secret
