@@ -12,6 +12,13 @@ Out of the box Craft 3 with Nginx, Postgres and Memcached.
 1. Run `npm install` to install development dependencies.
 1. Run `npm run dev` and then go visit [http://localhost/admin](http://localhost/admin), and get to work.
 
+## How to make a copy of remote database
+
+Prerequisite: Install Heroku CLI and ensure that your user has access.
+
+1. Run `heroku git:remote -a vaaler-kommune` in the project folder in order point the code towards Heroku.
+1. Run `./download-prod.sh` in the project folder. The database needs to be running for this script to be able to push data into the database.  
+
 ## Deployment
 
 Just push the thing to Heroku, and set some .env-stuff
