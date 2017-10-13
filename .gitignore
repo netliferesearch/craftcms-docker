@@ -30,3 +30,6 @@ Thumbs.db
 
 # logs files
 *.log
+
+# other
+/docker-src/db
