@@ -3,7 +3,7 @@ services:
     web:
       build:
         context: .
-        dockerfile: Dockerfile
+        dockerfile: docker-src/Dockerfile
       ports:
         - 80:80
       volumes:
@@ -16,16 +16,8 @@ services:
       environment:
         # Set locale to UTF-8 (https://oncletom.io/2015/docker-encoding/)
         LANG: C.UTF-8
-
         # MEMCACHED is linked
         MEMCACHED_HOST: memcached
-
-        # DB is linked
-        DB_HOST: postgres
-        DB_NAME: craft3beta
-        DB_PORT: 5432
-        DB_USER: craft3beta
-        DB_PASS: secret
 
     postgres:
       image: postgres:9.6.4
