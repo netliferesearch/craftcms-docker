@@ -1,6 +1,10 @@
 # Docker-based Craft 3 starter
 
+Welcome!
+
 Out of the box Craft 3 with Nginx, Postgres and Memcached.
+
+Read the readme. If/when you see opportunities to improve this setup do speak your mind in an issue. :)
 
 ## Prerequisites
  - Install [Docker for Mac](https://www.docker.com/docker-mac).
@@ -21,15 +25,16 @@ Where are the files to edit?
 
 Prerequisite: Install [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) and ensure that your user has access.
 
-1. Run `heroku git:remote -a vaaler-kommune` in the project folder in order point the code towards Heroku.
+1. Run `heroku git:remote -a INSERT-HEROKU-APPNAME` in the project folder in order point the code towards Heroku.
 1. Run `./download-prod.sh` in the project folder. The database needs to be running for this script to be able to push data into the database.  
 
 ## Deployment
 
 1. First ensure that you have command line access to push to Heroku (see previous section).
 1. Run `git push heroku`
-1. Visit https://vaaler-kommune.herokuapp.com
+1. Visit the app online.
 
 ## Troubleshooting
 
-Delete containers with: Run `docker-compose down && docker-compose up --force-recreate`
+1. Delete containers with: `docker-compose down && docker-compose up --force-recreate`
+1. If you want to purge and reinstall craft as well. You can delete the /app folder before running the previous step.
