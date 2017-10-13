@@ -1,0 +1,8 @@
+{% header "Content-Type: text/plain; charset=utf-8" %}
+User-agent: *
+{% if 'prototypes' in craft.request.url or 'herokuapp' in craft.request.url  %}
+Disallow: /
+{% else %}
+{# Don't allow web crawlers to index Craft #}
+Disallow: /craft/
+{% endif %}
