@@ -11,10 +11,10 @@ else
     composer install -d $DIR
     # We move the files inside the docker container into mounted folder so that
     # they'll re-emerge on the user's host pc from within the bowels of the container.
-    cp /.env $DIR
-    cp /config/general.php $DIR/config/general.php
-    cp /config/memcache.php $DIR/config/memcache.php
-    cp /config/db.php $DIR/config/db.php
+    mv /.env $DIR
+    mv /seed-config/sample.general.php $DIR/config/general.php
+    mv /seed-config/sample.memcache.php $DIR/config/memcache.php
+    mv /seed-config/sample.db.php $DIR/config/db.php
 fi
 
 # Start nginx

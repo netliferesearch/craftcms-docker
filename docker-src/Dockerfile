@@ -18,17 +18,15 @@ sed -i -e "s/session.save_handler\s*=\s*.*/session.save_handler = memcached/g" $
 sed -i -e "s/;session.save_path\s*=\s*.*/session.save_path = \${MEMCACHED_HOST}:11211/g" ${php_conf}
 
 # Add default craft cms nginx config
-ADD ./default.conf /etc/nginx/conf.d/default.conf
+ADD ./docker-src/default.conf /etc/nginx/conf.d/default.conf
 
 RUN chown -Rf nginx:nginx /usr/share/nginx
 
-# Add database environment
-ADD .env.sample /.env
-ADD ./install.sh /install.sh
+# Add configuration
+ADD ./docker-src/.sample.env /.env
+ADD ./docker-src/seed-config /seed-config
+ADD ./docker-src/install.sh /install.sh
 RUN chmod +x /install.sh
-
-# Add default config
-ADD ./config /config
 
 EXPOSE 80
 

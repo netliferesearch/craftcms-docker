@@ -8,10 +8,10 @@
 $url = parse_url(getenv('DATABASE_URL'));
 
 return [
-    'driver' => 'psql',
+    'driver' => 'pgsql',
     'server' => $url['host'],
     'user' => $url['user'],
-    'password' => $url['password'],
+    'password' => $url['pass'],
     'database' => ltrim($url['path'], '/'),
     'schema' => 'public',
     'tablePrefix' => getenv('DB_TABLE_PREFIX'),
