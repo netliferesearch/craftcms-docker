@@ -5,8 +5,8 @@ const path = require('path')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
 const nodeModulesPath = path.resolve(__dirname, 'node_modules')
-const mainJSPath = path.resolve(__dirname, 'resources/js', 'app.js')
-const mainCSSPath = path.resolve(__dirname, 'resources/scss', 'style.scss')
+const mainJSPath = path.resolve(__dirname, 'app/resources/js', 'app.js')
+const mainCSSPath = path.resolve(__dirname, 'app/resources/scss', 'style.scss')
 const publicPath = path.resolve(__dirname, 'app/web')
 
 module.exports = {

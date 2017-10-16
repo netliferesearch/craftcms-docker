@@ -28,11 +28,13 @@ RUN composer create-project craftcms/craft /craft-tmp-build -s beta \
 
 # Add configuration to tmp build folder
 ADD ./docker-src/.sample.env /craft-tmp-build/.env
-ADD ./docker-src/seed-config/sample.db.php /craft-tmp-build/config/db.php
-ADD ./docker-src/seed-config/sample.general.php /craft-tmp-build/config/general.php
-ADD ./docker-src/seed-config/sample.memcache.php /craft-tmp-build/config/memcache.php
-ADD ./docker-src/seed-templates/sample.index.twig /craft-tmp-build/templates/index.twig
-ADD ./docker-src/seed-templates/sample.robots.txt.twig /craft-tmp-build/templates/robots.txt.twig
+ADD ./docker-src/sample-resources/js/sample.app.js /craft-tmp-build/resources/js/app.js
+ADD ./docker-src/sample-resources/scss/sample.style.scss /craft-tmp-build/resources/scss/style.scss
+ADD ./docker-src/sample-config/sample.db.php /craft-tmp-build/config/db.php
+ADD ./docker-src/sample-config/sample.general.php /craft-tmp-build/config/general.php
+ADD ./docker-src/sample-config/sample.memcache.php /craft-tmp-build/config/memcache.php
+ADD ./docker-src/sample-templates/sample.index.twig /craft-tmp-build/templates/index.twig
+ADD ./docker-src/sample-templates/sample.robots.txt.twig /craft-tmp-build/templates/robots.txt.twig
 ADD ./docker-src/install.sh /install.sh
 RUN chmod +x /install.sh
 
